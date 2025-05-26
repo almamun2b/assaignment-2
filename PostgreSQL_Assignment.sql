@@ -12,7 +12,7 @@ CREATE TABLE species (
     common_name VARCHAR(100) NOT NULL,
     scientific_name VARCHAR(100) NOT NULL,
     discovery_date DATE,
-    conservation_status VARCHAR(50) NOT NULL
+    conservation_status VARCHAR(50)
 );
 
 CREATE TABLE sightings (
@@ -20,7 +20,7 @@ CREATE TABLE sightings (
     species_id INT NOT NULL,
     ranger_id INT NOT NULL,
     location VARCHAR(100) NOT NULL,
-    sighting_time TIMESTAMP NOT NULL,
+    sighting_time TIMESTAMP,
     notes TEXT,
     FOREIGN KEY (ranger_id) REFERENCES rangers (ranger_id),
     FOREIGN KEY (species_id) REFERENCES species (species_id)
